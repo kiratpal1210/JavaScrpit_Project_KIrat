@@ -1,0 +1,59 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// create a variable to hold your NFT's
+const NFTs = []
+let NFTs_count=0;
+
+// this function will take in some values as parameters, create an
+// NFT object using the parameters passed to it for its metadata, 
+// and store it in the variable above.
+function mintNFT (name, haircolor, jeanstype, bling) {                       // paramters are passes\
+    const NFT = {                                                            // Object is passes which will be further stored in the variable created
+        "name": name,
+        "haircolor": haircolor,
+        "jeanstype": jeanstype,
+        "bling": bling
+
+    }
+    NFTs.push(NFT);
+    NFTs_count++;
+
+}
+
+// create a "loop" that will go through an "array" of NFT's
+// and print their metadata with console.log()
+function listNFTs () {
+    console.log("The metadata is:");
+
+   for(let i=0;i<NFTs.length;i++)
+   {
+        console.log("\nname     :" + NFTs[i].name);
+        console.log("haircolor:" + NFTs[i].haircolor);
+        console.log("jeanstype:" + NFTs[i].jeanstype);
+        console.log("bling    :" + NFTs[i].bling);
+   }
+}
+
+// print the total number of NFTs we have minted to the console
+function getTotalSupply() {
+   console.log("\nThe total number of NFTs minted are:");
+    
+  console.log(NFTs_count);
+}
+
+// call your functions below this line
+mintNFT("Kiratpal Singh kalsey","Brown","Straight","Gold");
+mintNFT("Pahul Kalsey","White","Baggy","Silver");
+mintNFT("Avneet kaur kalsey","Golden","Cargo","Diamond");
+
+listNFTs();
+
+getTotalSupply();
